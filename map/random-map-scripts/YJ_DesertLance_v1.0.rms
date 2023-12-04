@@ -1,0 +1,1332 @@
+/*DesertLance_moti_v1.1に対して、PALISADE_WALL→STONE_WALL*/
+/* DesertLance moti v1 */
+/* Modified by moti 25 May 2023 */
+
+/* Arabia 2023 */
+
+/* PH SEASONS */
+
+/* マップデザインを砂漠やアフリカを除去 */
+start_random
+percent_chance 30 #define PH_SPRING
+percent_chance 30 #define PH_ALPINE
+*/percent_chance 45 #define PH_DESERT*/
+*/percent_chance 10 #define PH_AFRICAN_E*/
+percent_chance 20 #define PH_ASIAN
+percent_chance 20 #define PH_MEDISOUTH
+end_random
+
+#include_drs F_seasons.inc
+
+/* ****************************************************** */
+<PLAYER_SETUP>
+  direct_placement
+	ai_info_map_type Runestones 0 0 0
+
+#include_drs thebr_setup.inc
+
+/* ****************************************************** */
+<LAND_GENERATION>
+
+  base_terrain                     LAYER_A
+enable_waves 0 
+
+create_land
+{ 
+  terrain_type                      LAYER_E
+  land_percent 100
+  border_fuzziness                   100
+  clumping_factor 15
+  left_border 30
+  right_border 69
+  bottom_border 60
+  land_id 15
+}
+
+create_land
+{ 
+  terrain_type                      LAYER_E
+  land_percent 100
+  border_fuzziness                   100
+  clumping_factor 15
+  left_border 30
+  right_border 69
+  top_border 60
+  land_id 15
+}
+
+create_land
+{ 
+  terrain_type                      LAYER_E
+  land_percent 100
+  border_fuzziness                   100
+  clumping_factor 15
+  left_border 69
+  right_border 30
+  bottom_border 60
+  land_id 15
+}
+
+create_land
+{ 
+  terrain_type                      LAYER_E
+  land_percent 100
+  border_fuzziness                   100
+  clumping_factor 15
+  left_border 69
+  right_border 30
+  top_border 60
+  land_id 15
+}
+
+create_land
+{ 
+  terrain_type                     VODA
+  number_of_tiles			120
+  base_size                          	14
+if TINY_MAP
+  circle_radius 			34 0
+elseif SMALL_MAP
+  circle_radius 			36 0
+else
+  /* circle_radius 			38 9 */
+endif
+  border_fuzziness                   15
+  other_zone_avoidance_distance 1
+  clumping_factor 15
+  land_position 39 50
+  assign_to AT_COLOR 1 0 0
+}
+
+create_land
+{ 
+  terrain_type                     VODA
+  number_of_tiles			120
+  base_size                          	14
+if TINY_MAP
+  circle_radius 			34 0
+elseif SMALL_MAP
+  circle_radius 			36 0
+else
+  /* circle_radius 			38 9 */
+endif
+  border_fuzziness                   15
+  other_zone_avoidance_distance 1
+  clumping_factor 15
+  land_position 61 50
+  assign_to AT_COLOR 2 0 0
+}
+
+create_land
+{ 
+  terrain_type                     VODA
+  number_of_tiles			120
+  base_size                          	14
+if TINY_MAP
+  circle_radius 			34 0
+elseif SMALL_MAP
+  circle_radius 			36 0
+else
+  /* circle_radius 			38 9 */
+endif
+  border_fuzziness                   15
+  other_zone_avoidance_distance 1
+  clumping_factor 15
+  land_position 15 50
+  assign_to AT_COLOR 3 0 0
+}
+
+create_land
+{ 
+  terrain_type                     VODA
+  number_of_tiles			120
+  base_size                          	14
+if TINY_MAP
+  circle_radius 			34 0
+elseif SMALL_MAP
+  circle_radius 			36 0
+else
+  /* circle_radius 			38 9 */
+endif
+  border_fuzziness                   15
+  other_zone_avoidance_distance 1
+  clumping_factor 15
+  land_position 90 50
+  assign_to AT_COLOR 4 0 0
+}
+
+create_land
+{ 
+  terrain_type                     VODA
+  number_of_tiles			120
+  base_size                          	14
+if TINY_MAP
+  circle_radius 			34 0
+elseif SMALL_MAP
+  circle_radius 			36 0
+else
+  /* circle_radius 			38 9 */
+endif
+  border_fuzziness                   15
+  other_zone_avoidance_distance 1
+  clumping_factor 15
+  land_position 15 15
+  assign_to AT_COLOR 5 0 0
+}
+
+create_land
+{ 
+  terrain_type                     VODA
+  number_of_tiles			120
+  base_size                          	14
+if TINY_MAP
+  circle_radius 			34 0
+elseif SMALL_MAP
+  circle_radius 			36 0
+else
+  /* circle_radius 			38 9 */
+endif
+  border_fuzziness                   15
+  other_zone_avoidance_distance 1
+  clumping_factor 15
+  land_position 90 15
+  assign_to AT_COLOR 6 0 0
+}
+
+create_land
+{ 
+  terrain_type                     VODA
+  number_of_tiles			120
+  base_size                          	14
+if TINY_MAP
+  circle_radius 			34 0
+elseif SMALL_MAP
+  circle_radius 			36 0
+else
+  /* circle_radius 			38 9 */
+endif
+  border_fuzziness                   15
+  other_zone_avoidance_distance 1
+  clumping_factor 15
+  land_position 15 85
+  assign_to AT_COLOR 7 0 0
+}
+
+create_land
+{ 
+  terrain_type                     VODA
+  number_of_tiles			120
+  base_size                          	14
+if TINY_MAP
+  circle_radius 			34 0
+elseif SMALL_MAP
+  circle_radius 			36 0
+else
+  /* circle_radius 			38 9 */
+endif
+  border_fuzziness                   15
+  other_zone_avoidance_distance 1
+  clumping_factor 15
+  land_position 90 85
+  assign_to AT_COLOR 8 0 0
+}
+
+
+
+/* ****************************************************** */
+<TERRAIN_GENERATION>
+
+#include_drs F_ColorCorrection.inc
+
+
+  create_terrain DLC_ROCK
+{
+  base_terrain                   VODA
+  land_percent                   100
+  number_of_clumps               1000
+}
+
+/*
+  create_terrain DLC_ROCK
+{
+  base_terrain                   VODA
+  land_percent                   100
+  number_of_clumps               1000
+}
+
+  create_terrain DLC_ROCK
+{
+  base_terrain                   VODA
+  land_percent                   100
+  number_of_clumps               1000
+}
+
+  create_terrain DLC_ROCK
+{
+  base_terrain                   VODA
+  land_percent                   100
+  number_of_clumps               1000
+}
+
+  create_terrain DLC_ROCK
+{
+  base_terrain                   VODA
+  land_percent                   100
+  number_of_clumps               1000
+}
+
+  create_terrain DLC_ROCK
+{
+  base_terrain                   VODA
+  land_percent                   100
+  number_of_clumps               1000
+}
+
+  create_terrain DLC_ROCK
+{
+  base_terrain                   VODA
+  land_percent                   100
+  number_of_clumps               1000
+}
+
+  create_terrain DLC_ROCK
+{
+  base_terrain                   VODA
+  land_percent                   100
+  number_of_clumps               1000
+}
+*/
+
+/* PRIMARY FOREST */
+
+  create_terrain WOODIES
+{
+  base_terrain                   LAYER_A
+  spacing_to_other_terrain_types 6
+  land_percent                   7
+  number_of_clumps               9
+  set_avoid_player_start_areas     
+  set_scale_by_groups
+}
+
+if PH_DESERT
+   create_terrain VODA
+{
+  base_terrain                   WOODIES
+  spacing_to_other_terrain_types 1
+  number_of_tiles		28
+  number_of_clumps               3
+  set_avoid_player_start_areas
+  set_flat_terrain_only     
+  set_scale_by_groups
+}
+elseif PH_AFRICAN
+   create_terrain VODA
+{
+  base_terrain                   WOODIES
+  spacing_to_other_terrain_types 1
+  number_of_tiles		28
+  number_of_clumps               3
+  set_avoid_player_start_areas
+  set_flat_terrain_only     
+  set_scale_by_groups
+}
+else
+endif
+
+
+/* SECONDARY FOREST */
+
+create_terrain WOODIES_B
+{
+  base_terrain                   LAYER_A
+  spacing_to_other_terrain_types 3
+  land_percent                   1
+  number_of_clumps               3
+  set_avoid_player_start_areas     
+  set_scale_by_groups
+}
+
+/* Adding individual forests to player lands */
+
+/* 1. pushing forests further away */
+
+  create_terrain LAYER_C
+{
+  base_terrain                   DLC_ROCK
+  land_percent                   100
+  number_of_clumps               1000
+  spacing_to_other_terrain_types 5
+}
+
+  create_terrain LAYER_C
+{
+  base_terrain                   DLC_ROCK
+  land_percent                   100
+  number_of_clumps               1000
+  spacing_to_other_terrain_types 5
+}
+
+  create_terrain LAYER_C
+{
+  base_terrain                   DLC_ROCK
+  land_percent                   100
+  number_of_clumps               1000
+  spacing_to_other_terrain_types 5
+}
+
+  create_terrain LAYER_C
+{
+  base_terrain                   DLC_ROCK
+  land_percent                   100
+  number_of_clumps               1000
+  spacing_to_other_terrain_types 5
+}
+
+  create_terrain LAYER_C
+{
+  base_terrain                   DLC_ROCK
+  land_percent                   100
+  number_of_clumps               1000
+  spacing_to_other_terrain_types 5
+}
+
+  create_terrain LAYER_C
+{
+  base_terrain                   DLC_ROCK
+  land_percent                   100
+  number_of_clumps               1000
+  spacing_to_other_terrain_types 5
+}
+
+  create_terrain LAYER_C
+{
+  base_terrain                   DLC_ROCK
+  land_percent                   100
+  number_of_clumps               1000
+  spacing_to_other_terrain_types 5
+}
+
+  create_terrain LAYER_C
+{
+  base_terrain                   DLC_ROCK
+  land_percent                   100
+  number_of_clumps               1000
+  spacing_to_other_terrain_types 5
+}
+
+  create_terrain LAYER_A
+{
+  base_terrain                   LAYER_C
+  land_percent                   100
+  number_of_clumps               1000
+}
+
+  create_terrain LAYER_A
+{
+  base_terrain                   LAYER_C
+  land_percent                   100
+  number_of_clumps               1000
+}
+
+  create_terrain LAYER_A
+{
+  base_terrain                   LAYER_C
+  land_percent                   100
+  number_of_clumps               1000
+}
+
+  create_terrain LAYER_A
+{
+  base_terrain                   LAYER_C
+  land_percent                   100
+  number_of_clumps               1000
+}
+
+  create_terrain LAYER_A
+{
+  base_terrain                   LAYER_C
+  land_percent                   100
+  number_of_clumps               1000
+}
+
+  create_terrain LAYER_A
+{
+  base_terrain                   LAYER_C
+  land_percent                   100
+  number_of_clumps               1000
+}
+
+  create_terrain LAYER_A
+{
+  base_terrain                   LAYER_C
+  land_percent                   100
+  number_of_clumps               1000
+}
+
+  create_terrain LAYER_A
+{
+  base_terrain                   LAYER_C
+  land_percent                   100
+  number_of_clumps               1000
+}
+
+  create_terrain LAYER_A
+{
+  base_terrain                   LAYER_C
+  land_percent                   100
+  number_of_clumps               1000
+}
+
+  create_terrain LAYER_A
+{
+  base_terrain                   LAYER_C
+  land_percent                   100
+  number_of_clumps               1000
+}
+
+  create_terrain LAYER_A
+{
+  base_terrain                   LAYER_C
+  land_percent                   100
+  number_of_clumps               1000
+}
+
+  create_terrain LAYER_A
+{
+  base_terrain                   LAYER_C
+  land_percent                   100
+  number_of_clumps               1000
+}
+
+  create_terrain LAYER_A
+{
+  base_terrain                   LAYER_C
+  land_percent                   100
+  number_of_clumps               1000
+}
+
+
+/* 2. replacing bases with unique terrains */
+
+  create_terrain SNOW
+{
+  base_terrain                   DLC_ROCK
+  land_percent                   100
+  number_of_clumps               1
+}
+  create_terrain DLC_DESERTGRAVEL
+{
+  base_terrain                   DLC_ROCK
+  land_percent                   100
+  number_of_clumps               1
+}
+  create_terrain DIRT2
+{
+  base_terrain                   DLC_ROCK
+  land_percent                   100
+  number_of_clumps               1
+}
+  create_terrain DESERT
+{
+  base_terrain                   DLC_ROCK
+  land_percent                   100
+  number_of_clumps               1
+}
+  create_terrain DLC_JUNGLEGRASS
+{
+  base_terrain                   DLC_ROCK
+  land_percent                   100
+  number_of_clumps               1
+}
+  create_terrain ROAD
+{
+  base_terrain                   DLC_ROCK
+  land_percent                   100
+  number_of_clumps               1
+}
+  create_terrain ROAD2
+{
+  base_terrain                   DLC_ROCK
+  land_percent                   100
+  number_of_clumps               1
+}
+
+/* 3. applying the forests */
+
+  create_terrain WOODIES
+{
+  base_terrain                   DLC_ROCK
+  number_of_tiles		 200
+  number_of_clumps               3
+  set_avoid_player_start_areas   
+}
+  create_terrain WOODIES
+{
+  base_terrain                   ROAD
+  number_of_tiles		 200
+  number_of_clumps               3
+  set_avoid_player_start_areas   
+}
+  create_terrain WOODIES
+{
+  base_terrain                   ROAD2
+  number_of_tiles		 200
+  number_of_clumps               3
+  set_avoid_player_start_areas   
+}
+  create_terrain WOODIES
+{
+  base_terrain                   DIRT2
+  number_of_tiles		 200
+  number_of_clumps               3
+  set_avoid_player_start_areas   
+}
+  create_terrain WOODIES
+{
+  base_terrain                   DESERT
+  number_of_tiles		 200
+  number_of_clumps               3
+  set_avoid_player_start_areas   
+}
+  create_terrain WOODIES
+{
+  base_terrain                   DLC_JUNGLEGRASS
+  number_of_tiles		 200
+  number_of_clumps               3
+  set_avoid_player_start_areas   
+}
+  create_terrain WOODIES
+{
+  base_terrain                   DLC_DESERTGRAVEL
+  number_of_tiles		 200
+  number_of_clumps               3
+  set_avoid_player_start_areas   
+}
+  create_terrain WOODIES
+{
+  base_terrain                   SNOW
+  number_of_tiles		 200
+  number_of_clumps               3
+  set_avoid_player_start_areas   
+}
+
+/* 4. cleaning up */
+
+  create_terrain LAYER_A
+{
+  base_terrain                   DLC_DESERTGRAVEL
+  land_percent			 100
+  number_of_clumps               1000
+}
+  create_terrain LAYER_A
+{
+  base_terrain                   DLC_DESERTGRAVEL
+  land_percent			 100
+  number_of_clumps               1000
+}
+
+  create_terrain LAYER_A
+{
+  base_terrain                   DLC_DESERTGRAVEL
+  land_percent			 100
+  number_of_clumps               1000
+}
+  create_terrain LAYER_A
+{
+  base_terrain                   DLC_DESERTGRAVEL
+  land_percent			 100
+  number_of_clumps               1000
+}
+
+  create_terrain LAYER_A
+{
+  base_terrain                   DLC_DESERTGRAVEL
+  land_percent			 100
+  number_of_clumps               1000
+}
+  create_terrain LAYER_A
+{
+  base_terrain                   DLC_DESERTGRAVEL
+  land_percent			 100
+  number_of_clumps               1000
+}
+
+  create_terrain LAYER_A
+{
+  base_terrain                   DLC_DESERTGRAVEL
+  land_percent			 100
+  number_of_clumps               1000
+}
+  create_terrain LAYER_A
+{
+  base_terrain                   DLC_DESERTGRAVEL
+  land_percent			 100
+  number_of_clumps               1000
+}
+  create_terrain LAYER_A
+{
+  base_terrain                   DLC_DESERTGRAVEL
+  land_percent			 100
+  number_of_clumps               1000
+}
+  create_terrain LAYER_A
+{
+  base_terrain                   DLC_DESERTGRAVEL
+  land_percent			 100
+  number_of_clumps               1000
+}
+
+
+
+  create_terrain LAYER_A
+{
+  base_terrain                   SNOW
+  land_percent			 100
+  number_of_clumps               1000
+}
+  create_terrain LAYER_A
+{
+  base_terrain                   SNOW
+  land_percent			 100
+  number_of_clumps               1000
+}
+  create_terrain LAYER_A
+{
+  base_terrain                   SNOW
+  land_percent			 100
+  number_of_clumps               1000
+}
+  create_terrain LAYER_A
+{
+  base_terrain                   SNOW
+  land_percent			 100
+  number_of_clumps               1000
+}
+  create_terrain LAYER_A
+{
+  base_terrain                   SNOW
+  land_percent			 100
+  number_of_clumps               1000
+}
+  create_terrain LAYER_A
+{
+  base_terrain                   SNOW
+  land_percent			 100
+  number_of_clumps               1000
+}
+  create_terrain LAYER_A
+{
+  base_terrain                   SNOW
+  land_percent			 100
+  number_of_clumps               1000
+}
+  create_terrain LAYER_A
+{
+  base_terrain                   SNOW
+  land_percent			 100
+  number_of_clumps               1000
+}
+  create_terrain LAYER_A
+{
+  base_terrain                   SNOW
+  land_percent			 100
+  number_of_clumps               1000
+}
+  create_terrain LAYER_A
+{
+  base_terrain                   SNOW
+  land_percent			 100
+  number_of_clumps               1000
+}
+
+  create_terrain LAYER_A
+{
+  base_terrain                   DESERT
+  land_percent			 100
+  number_of_clumps               1000
+}
+  create_terrain LAYER_A
+{
+  base_terrain                   DESERT
+  land_percent			 100
+  number_of_clumps               1000
+}
+  create_terrain LAYER_A
+{
+  base_terrain                   DESERT
+  land_percent			 100
+  number_of_clumps               1000
+}
+  create_terrain LAYER_A
+{
+  base_terrain                   DESERT
+  land_percent			 100
+  number_of_clumps               1000
+}
+  create_terrain LAYER_A
+{
+  base_terrain                   DESERT
+  land_percent			 100
+  number_of_clumps               1000
+}
+  create_terrain LAYER_A
+{
+  base_terrain                   DESERT
+  land_percent			 100
+  number_of_clumps               1000
+}
+  create_terrain LAYER_A
+{
+  base_terrain                   DESERT
+  land_percent			 100
+  number_of_clumps               1000
+}
+  create_terrain LAYER_A
+{
+  base_terrain                   DESERT
+  land_percent			 100
+  number_of_clumps               1000
+}
+  create_terrain LAYER_A
+{
+  base_terrain                   DESERT
+  land_percent			 100
+  number_of_clumps               1000
+}
+  create_terrain LAYER_A
+{
+  base_terrain                   DESERT
+  land_percent			 100
+  number_of_clumps               1000
+}
+  create_terrain LAYER_A
+{
+  base_terrain                   DIRT2
+  land_percent			 100
+  number_of_clumps               1000
+}
+  create_terrain LAYER_A
+{
+  base_terrain                   DIRT2
+  land_percent			 100
+  number_of_clumps               1000
+}
+  create_terrain LAYER_A
+{
+  base_terrain                   DIRT2
+  land_percent			 100
+  number_of_clumps               1000
+}
+  create_terrain LAYER_A
+{
+  base_terrain                   DIRT2
+  land_percent			 100
+  number_of_clumps               1000
+}
+  create_terrain LAYER_A
+{
+  base_terrain                   DIRT2
+  land_percent			 100
+  number_of_clumps               1000
+}
+  create_terrain LAYER_A
+{
+  base_terrain                   DIRT2
+  land_percent			 100
+  number_of_clumps               1000
+}
+  create_terrain LAYER_A
+{
+  base_terrain                   DIRT2
+  land_percent			 100
+  number_of_clumps               1000
+}
+  create_terrain LAYER_A
+{
+  base_terrain                   DIRT2
+  land_percent			 100
+  number_of_clumps               1000
+}
+  create_terrain LAYER_A
+{
+  base_terrain                   DIRT2
+  land_percent			 100
+  number_of_clumps               1000
+}
+  create_terrain LAYER_A
+{
+  base_terrain                   DIRT2
+  land_percent			 100
+  number_of_clumps               1000
+}
+
+  create_terrain LAYER_A
+{
+  base_terrain                   ROAD
+  land_percent			 100
+  number_of_clumps               1000
+}
+  create_terrain LAYER_A
+{
+  base_terrain                   ROAD
+  land_percent			 100
+  number_of_clumps               1000
+}
+  create_terrain LAYER_A
+{
+  base_terrain                   ROAD
+  land_percent			 100
+  number_of_clumps               1000
+}
+  create_terrain LAYER_A
+{
+  base_terrain                   ROAD
+  land_percent			 100
+  number_of_clumps               1000
+}
+  create_terrain LAYER_A
+{
+  base_terrain                   ROAD
+  land_percent			 100
+  number_of_clumps               1000
+}
+  create_terrain LAYER_A
+{
+  base_terrain                   ROAD
+  land_percent			 100
+  number_of_clumps               1000
+}
+  create_terrain LAYER_A
+{
+  base_terrain                   ROAD
+  land_percent			 100
+  number_of_clumps               1000
+}
+  create_terrain LAYER_A
+{
+  base_terrain                   ROAD
+  land_percent			 100
+  number_of_clumps               1000
+}
+  create_terrain LAYER_A
+{
+  base_terrain                   ROAD
+  land_percent			 100
+  number_of_clumps               1000
+}
+  create_terrain LAYER_A
+{
+  base_terrain                   ROAD
+  land_percent			 100
+  number_of_clumps               1000
+}
+
+  create_terrain LAYER_A
+{
+  base_terrain                   ROAD2
+  land_percent			 100
+  number_of_clumps               1000
+}
+  create_terrain LAYER_A
+{
+  base_terrain                   ROAD2
+  land_percent			 100
+  number_of_clumps               1000
+}
+  create_terrain LAYER_A
+{
+  base_terrain                   ROAD2
+  land_percent			 100
+  number_of_clumps               1000
+}
+  create_terrain LAYER_A
+{
+  base_terrain                   ROAD2
+  land_percent			 100
+  number_of_clumps               1000
+}
+  create_terrain LAYER_A
+{
+  base_terrain                   ROAD2
+  land_percent			 100
+  number_of_clumps               1000
+}
+  create_terrain LAYER_A
+{
+  base_terrain                   ROAD2
+  land_percent			 100
+  number_of_clumps               1000
+}
+  create_terrain LAYER_A
+{
+  base_terrain                   ROAD2
+  land_percent			 100
+  number_of_clumps               1000
+}
+  create_terrain LAYER_A
+{
+  base_terrain                   ROAD2
+  land_percent			 100
+  number_of_clumps               1000
+}
+  create_terrain LAYER_A
+{
+  base_terrain                   ROAD2
+  land_percent			 100
+  number_of_clumps               1000
+}
+  create_terrain LAYER_A
+{
+  base_terrain                   ROAD2
+  land_percent			 100
+  number_of_clumps               1000
+}
+
+  create_terrain LAYER_A
+{
+  base_terrain                   DLC_ROCK
+  land_percent			 100
+  number_of_clumps               1000
+}
+  create_terrain LAYER_A
+{
+  base_terrain                   DLC_ROCK
+  land_percent			 100
+  number_of_clumps               1000
+}
+  create_terrain LAYER_A
+{
+  base_terrain                   DLC_ROCK
+  land_percent			 100
+  number_of_clumps               1000
+}
+  create_terrain LAYER_A
+{
+  base_terrain                   DLC_ROCK
+  land_percent			 100
+  number_of_clumps               1000
+}
+  create_terrain LAYER_A
+{
+  base_terrain                   DLC_ROCK
+  land_percent			 100
+  number_of_clumps               1000
+}
+  create_terrain LAYER_A
+{
+  base_terrain                   DLC_ROCK
+  land_percent			 100
+  number_of_clumps               1000
+}
+  create_terrain LAYER_A
+{
+  base_terrain                   DLC_ROCK
+  land_percent			 100
+  number_of_clumps               1000
+}
+  create_terrain LAYER_A
+{
+  base_terrain                   DLC_ROCK
+  land_percent			 100
+  number_of_clumps               1000
+}
+  create_terrain LAYER_A
+{
+  base_terrain                   DLC_ROCK
+  land_percent			 100
+  number_of_clumps               1000
+}
+  create_terrain LAYER_A
+{
+  base_terrain                   DLC_ROCK
+  land_percent			 100
+  number_of_clumps               1000
+}
+
+  create_terrain LAYER_A
+{
+  base_terrain                   DLC_JUNGLEGRASS
+  land_percent			 100
+  number_of_clumps               1000
+}
+  create_terrain LAYER_A
+{
+  base_terrain                   DLC_JUNGLEGRASS
+  land_percent			 100
+  number_of_clumps               1000
+}
+  create_terrain LAYER_A
+{
+  base_terrain                   DLC_JUNGLEGRASS
+  land_percent			 100
+  number_of_clumps               1000
+}
+  create_terrain LAYER_A
+{
+  base_terrain                   DLC_JUNGLEGRASS
+  land_percent			 100
+  number_of_clumps               1000
+}
+  create_terrain LAYER_A
+{
+  base_terrain                   DLC_JUNGLEGRASS
+  land_percent			 100
+  number_of_clumps               1000
+}
+  create_terrain LAYER_A
+{
+  base_terrain                   DLC_JUNGLEGRASS
+  land_percent			 100
+  number_of_clumps               1000
+}
+  create_terrain LAYER_A
+{
+  base_terrain                   DLC_JUNGLEGRASS
+  land_percent			 100
+  number_of_clumps               1000
+}
+  create_terrain LAYER_A
+{
+  base_terrain                   DLC_JUNGLEGRASS
+  land_percent			 100
+  number_of_clumps               1000
+}
+
+  create_terrain LAYER_A
+{
+  base_terrain                   DLC_JUNGLEGRASS
+  land_percent			 100
+  number_of_clumps               1000
+}
+  create_terrain LAYER_A
+{
+  base_terrain                   DLC_JUNGLEGRASS
+  land_percent			 100
+  number_of_clumps               1000
+}
+
+
+/* PRIMARY PATCH */
+
+   create_terrain LAYER_B
+{
+  base_terrain                   LAYER_A
+  number_of_clumps               16
+  spacing_to_other_terrain_types 0
+  land_percent                   20
+  set_scale_by_size
+}
+
+   create_terrain DLC_ROCK
+{
+  base_terrain                   LAYER_B
+  number_of_clumps               1000
+  spacing_to_other_terrain_types 2
+  land_percent                   100
+  set_scale_by_size
+}
+
+   create_terrain LAYER_A
+{
+  base_terrain                   LAYER_B
+  number_of_clumps               1000
+  spacing_to_other_terrain_types 0
+  land_percent                   100
+  set_scale_by_size
+terrain_mask 1
+}
+
+   create_terrain LAYER_B
+{
+  base_terrain                   DLC_ROCK
+  number_of_clumps               1000
+  spacing_to_other_terrain_types 0
+  land_percent                   100
+  set_scale_by_size
+}
+
+   create_terrain LAYER_B
+{
+  base_terrain                   DLC_ROCK
+  number_of_clumps               1000
+  spacing_to_other_terrain_types 0
+  land_percent                   100
+  set_scale_by_size
+}
+
+   create_terrain LAYER_B
+{
+  base_terrain                   DLC_ROCK
+  number_of_clumps               1000
+  spacing_to_other_terrain_types 0
+  land_percent                   100
+  set_scale_by_size
+}
+
+/* SECONDARY PATCH */
+
+   create_terrain LAYER_C
+{
+  base_terrain                   LAYER_A
+  number_of_clumps               24
+  spacing_to_other_terrain_types 1
+  land_percent                   2
+  set_scale_by_size
+}
+
+/* TERTIARY PATCH */
+
+   create_terrain LAYER_C
+{
+  base_terrain                   LAYER_A
+  number_of_clumps               30
+  spacing_to_other_terrain_types 1
+  land_percent                   2
+  set_scale_by_size
+  terrain_mask 1
+}
+
+/* LAYER E+F Patch */
+
+   create_terrain LAYER_E
+{
+  base_terrain                   LAYER_A
+  number_of_clumps               20
+  spacing_to_other_terrain_types 0
+  land_percent                   2
+  set_scale_by_size
+terrain_mask 1
+}
+
+   create_terrain LAYER_F
+{
+  base_terrain                   LAYER_A
+  number_of_clumps               14
+  spacing_to_other_terrain_types 0
+  land_percent                   1
+  set_scale_by_size
+terrain_mask 1
+}
+
+<OBJECTS_GENERATION>
+
+#define GNR_NORMALTC
+#define GNR_STARTVILLS
+#define GNR_CLASSICSCOUT
+#define GNR_GIVERELICS
+
+#define GNR_RELICMODERN_MEDIUM
+
+#define GNR_REGICIDECLASSIC
+#define GNR_6KER
+#define GNR_STARTINGGOLD
+#define GNR_STARTINGSTONE
+
+#define GNR_SPLITSTARTGOLDS
+#define GNR_SPLITSTARTSTONES
+#define GNR_HUNTABLE_AVOID_BERRIES
+
+#define GNR_STARTGOLD744CL
+#define GNR_STARTSTONE54CL
+#define GNR_GIVEHERD_A
+#define GNR_GIVEHERD_B
+
+#define GNR_HERD4CLASSIC_A
+#define GNR_HERD22CLASSIC_B
+
+/*羊2×2の距離を最小14,16最大25に変更*/
+#define GNR_HERDBDIST_CL
+
+#define GNR_GIVEHUNT
+
+/*鹿を必ず４匹に変更*/
+#define GNR_HUNT4MODERN
+
+/*鹿の距離を最小12最大26に変更*/
+#define GNR_HUNTDIST_CL
+
+
+#define GNR_GIVELURES
+#define GNR_CLASSICLURES
+
+/*猪の距離を最小12最大25に変更*/
+#define GNR_LUREDIST_CL
+
+/*#define GNR_DOUBLEPRED*/
+#define GNR_RESBYMAP_KER
+#define GNR_FARGORIG_GIVE
+#define GNR_FARSORIG_GIVE
+
+#define GNR_FARGORIG_TYPE7
+#define GNR_FARSORIG_TYPE7
+#define GNR_HOMESTRAGGLE
+#define GNR_NORMALBIRDS
+
+#define GNR_SMALLFISHONLY
+
+#define GNR_ADDITIONALPRED
+
+#define GNR_MAPSTRAGGLE
+#include_drs GeneratingObjects.inc
+
+/*MUSASHI_GGG_1997 PALISADE_WALL→STONE_WALL*/
+create_object STONE_WALL
+{
+  number_of_objects 1
+  number_of_groups 99999
+  set_gaia_object_only
+  temp_min_distance_group_placement 0
+  group_placement_radius 0
+  terrain_to_place_on LAYER_E
+  set_gaia_unconvertible
+}
+
+<ELEVATION_GENERATION>
+
+#const LAYER_D 40
+
+#define GNRELEV_HEIGHT07
+#define GNRELEV_INTENSITY_D
+#define GNRELEV_LAY_A
+
+#include_drs GeneratingElevation.inc
+
+create_elevation 2
+{
+  enable_balanced_elevation
+  base_terrain LAYER_D
+if TINY_MAP
+  number_of_clumps 4
+elseif SMALL_MAP
+  number_of_clumps 6
+elseif MEDIUM_MAP
+  number_of_clumps 8
+elseif LARGE_MAP
+  number_of_clumps 12
+elseif HUGE_MAP
+  number_of_clumps 16
+else
+  number_of_clumps 16
+endif
+  number_of_tiles 300
+}
+
+
+/* ****************************************************** */
+
+/*
+<CLIFF_GENERATION>
+min_number_of_cliffs 10
+max_number_of_cliffs 15
+min_length_of_cliff  3
+max_length_of_cliff  10
+*/
+
+/*
+<CLIFF_GENERATION>
+min_number_of_cliffs 4
+max_number_of_cliffs 6
+min_length_of_cliff  2
+max_length_of_cliff  4
+*/
